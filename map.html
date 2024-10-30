@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 100vh;
+            width: 100%;
+        }
+        .popup-image {
+            width: 150px; /* Set a fixed width for the image */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+<body>
+     <!-- Navbar -->
+     <div class="navbar">
+        <a href="index.html">Homepage</a>
+        <a href="buy.html">Buy</a>
+        <a href="rent.html">Rent</a>
+        <a href="assistance.html">Assistance</a>
+        <a href="agent.html">Agent</a>
+        <a href="Calculator.html">Calculator</a>
+        <a href="map.html">map</a>
+    <div id="map"></div>
+    
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map and set its view to a specific location and zoom level
+        var map = L.map('map').setView([-28.4793, 24.6727], 6); // Centered in South Africa
+
+        // Set up the OSM layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Define the locations with pictures
+        var locations = [
+            { name: "Island Estate Outside front", coords: [-26.1065, 28.0450], picture: "Island Estate Out Front view.jpeg" }, // Sandton
+            { name: "Eagle Canyoon Golf Estate Outside", coords: [-26.1080, 28.0560], picture: "Eagle canyoon.jpeg" }, // Sandton
+            { name: "Roodeport West Apartment Main bedroom ", coords: [-26.1458, 28.0412], picture: "roodeport apartment.jpeg" }, // Rosebank
+            { name: "Apartment 1 Westrand living room", coords: [-26.1420, 28.0370], picture: "apartment 1.jpeg" }, // Rosebank
+            { name: "Apartment 2 Living room", coords: [-33.9510, 18.3920], picture: "Apartment 2.jpeg" }, // Camps Bay
+            { name: "Apartment 3 kitchen", coords: [-25.7479, 28.2293], picture: "house10.jpg" }, // Pretoria
+            { name: "House 1 kitchen", coords: [-26.2041, 28.0473], picture: "house 1 .jpeg" }, // Johannesburg
+            { name: "Apartment 7", coords: [-26.2021, 28.0462], picture: "apartment 7.jpg" }, // Johannesburg
+            { name: "House 2 living room", coords: [-26.1973, 28.0501], picture: "house 2 living.jpg" }, //Ennerdale
+        ];
+
+        // Add markers to the map
+        locations.forEach(function(location) {
+            var popupContent = `<strong>${location.name}</strong><br>
+                                <img src="${location.picture}" class="popup-image" alt="${location.name}">`;
+            L.marker(location.coords).addTo(map)
+                .bindPopup(popupContent)
+                .openPopup();
+        });
+    </script>
+</body>
+</html>
+    

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Calculator - TK's Empire House And Homes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="buy.html">Buy</a></li>
+                <li><a href="rent.html">Rent</a></li>
+                <li><a href="commercial.html">Commercial</a></li>
+                <li><a href="assistance.html">Assistance</a></li>
+                <li><a href="agent.html">Agent</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="map.html">Map</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Apartment and House Price Calculator</h2>
+        <form id="priceCalculator">
+            <div class="input-group">
+                <label for="apartment1">Apartment 1 Price:</label>
+                <input type="number" id="apartment1" placeholder="Enter price">
+            </div>
+            <div class="input-group">
+                <label for="apartment2">Apartment 2 Price:</label>
+                <input type="number" id="apartment2" placeholder="Enter price">
+            </div>
+            <div class="input-group">
+                <label for="house1">House Price:</label>
+                <input type="number" id="house1" placeholder="Enter price">
+            </div>
+            <div class="input-group">
+                <label for="house2">House 2 Price:</label>
+                <input type="number" id="house2" placeholder="Enter price">
+            </div>
+            <button type="button" onclick="calculateTotal()">Calculate Total</button>
+        </form>
+        <h3>Total Price: <span id="totalPrice">$0</span></h3>
+    </main>
+
+    <script>
+        function calculateTotal() {
+            const apartment1 = parseFloat(document.getElementById('apartment1').value) || 0;
+            const apartment2 = parseFloat(document.getElementById('apartment2').value) || 0;
+            const house1 = parseFloat(document.getElementById('house1').value) || 0;
+            const house2 = parseFloat(document.getElementById('house2').value) || 0;
+
+            const total = apartment1 + apartment2 + house1 + house2;
+
+            document.getElementById('totalPrice').innerText = `$${total.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,391 @@
+/* styles.css */
+
+/* General body styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  color: #343a40;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Header styles */
+header {
+  background-color: #343a40;
+  color: #ffffff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Property container styles */
+.property-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Individual property card styles */
+.property-card {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: calc(33% - 20px); /* Three columns */
+  margin: 10px;
+  padding: 15px;
+  transition: transform 0.2s;
+}
+
+.property-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Property image styles */
+.property-card img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* Property title styles */
+.property-title {
+  font-size: 1.5em;
+  color: #007bff;
+  margin: 10px 0;
+}
+
+/* Property details styles */
+.property-details {
+  font-size: 1em;
+  color: #6c757d;
+}
+
+/* Price styles */
+.property-price {
+  font-size: 1.2em;
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .property-card {
+      width: calc(50% - 20px); /* Two columns on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .property-card {
+      width: 100%; /* One column on very small screens */
+  }
+}
+
+  /*Estates*/
+  /* styles.css */
+
+/* General body styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Header styles */
+h1 {
+  text-align: center;
+  color: #004d40;
+  margin-bottom: 40px;
+  font-size: 2.5em;
+}
+
+/* Slider section styles */
+.slider {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Individual estate item styles */
+.slides ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.slides li {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: calc(30% - 20px); /* Adjust for three columns */
+  margin: 10px;
+  padding: 15px;
+  transition: transform 0.2s;
+}
+
+.slides li:hover {
+  transform: translateY(-5px);
+}
+
+/* Image styles */
+.slides img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Estate title styles */
+.slides h3 {
+  font-size: 1.5em;
+  color: #00695c;
+  margin: 10px 0;
+}
+
+/* Estate description styles */
+.slides p {
+  font-size: 1em;
+  color: #555;
+}
+
+/* Price styles */
+.price {
+  font-size: 1.2em;
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .slides li {
+      width: calc(45% - 20px); /* Two columns on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .slides li {
+      width: 100%; /* One column on very small screens */
+  }
+}
+
+
+    /* Renting Section */
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif; /* Set a clean font */
+  line-height: 1.6; /* Improve readability */
+  background-color: #f9f9f9; /* Light background for contrast */
+  color: #333; /* Dark text for better visibility */
+}
+
+h2 {
+  margin: 1.5rem 0; /* Add margin for spacing */
+  text-align: center; /* Center the section title */
+}
+
+ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+  display: flex; /* Use flexbox to align items */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  gap: 20px; /* Space between items */
+  justify-content: center; /* Center items in the container */
+  max-width: 1200px; /* Limit the maximum width */
+  margin: 0 auto; /* Center the ul element */
+}
+
+li {
+  background: rgba(73, 70, 70, 0.096); /* White background for list items */
+  border: 1px solid #ccc; /* Light border around each item */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px; /* Padding inside each item */
+  width: calc(30% - 20px); /* Responsive width for three items per row */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.2s; /* Smooth hover effect */
+}
+
+li:hover {
+  transform: scale(1.02); /* Slightly scale up on hover */
+}
+
+img {
+  max-width: 100%; /* Make images responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px; /* Rounded corners for images */
+}
+
+h3 {
+  margin: 0.5rem 0; /* Add margin for spacing */
+  font-size: 1.2rem; /* Set font size */
+}
+
+h4 {
+  margin: 0.5rem 0; /* Add margin for spacing */
+  font-size: 1rem; /* Set font size for subheadings */
+  color: #666; /* Slightly lighter color for subheadings */
+}
+
+p {
+  margin: 0.25rem 0; /* Add margin for spacing */
+}
+
+@media (max-width: 768px) {
+  li {
+      width: calc(50% - 20px); /* Two items per row on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  li {
+      width: 100%; /* One item per row on very small screens */
+  }
+}
+
+ /* Assistance Page Styles */
+
+.Assistance-content {
+    background-color: #f7f7f7;
+    padding: 20px;
+  }
+  
+  .Assistance-content p {
+    margin-bottom: 20px;
+  }
+  
+  .Assistance-content form {
+    margin-top: 20px;
+  }
+  
+  .Assistance-content label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .Assistance-content input[type="text"], .Assistance-content input[type="email"], .Assistance-content textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .Assistance-content input[type="submit"] {
+    background-color: #246cd6;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  footer {
+    background-color: #f5f5f5; 
+    padding: 20px; 
+    text-align : center; 
+    clear: both; 
+    position: relative; 
+    bottom: 0; 
+    width: 100%; 
+  }
+  
+  form {
+    margin-top: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #2b75bb;
+  }
+  
+  textarea {
+    height: 100px;
+    resize: vertical;
+  }
+  
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  input[type="checkbox"], input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  input[type="checkbox"]:checked, input[type="radio"]:checked {
+    background-color: #4CAF50;
+  }
+  
+  input[type="file"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  input[type="file"]:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .error {
+    color: #f00;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  
+  .success {
+    color: #0f0;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+/*Calculator Section Styles */

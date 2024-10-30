@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TK's Empire House And Homes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="buy.html">Buy</a></li>
+                <li><a href="rent.html">Rent</a></li>
+                <li><a href="assistance.html">Assistance</a></li>
+                <li><a href="agent.html">Agent</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="map.html">Map</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="Housing">
+            <h1>Welcome to TK's Empire House And Homes</h1>
+            <p>This is the platform to be when in need for a home for you and your family.</p>
+            <p>We provide safe and secured homes and no need to worry about your safety because your family will be secured at all times.</p>
+        </section>
+        <div class="search-container">
+            <h2>Search for Properties</h2>
+            <form action="#" method="GET">
+                <label for="property-type">Property Type:</label>
+                <select id="property-type" name="property-type">
+                    <option value="house">House</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="condo">Estates</option>
+                </select>
+                
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" placeholder="Enter city">
+
+                <label for="min-price">Min Price:</label>
+                <input type="number" id="min-price" name="min-price" placeholder="Min Price">
+
+                <label for="max-price">Max Price:</label>
+                <input type="number" id="max-price" name="max-price" placeholder="Max Price">
+
+                <label for="bedrooms">Bedrooms:</label>
+                <input type="number" id="bedrooms" name="bedrooms" placeholder="Number of Bedrooms" min="0">
+
+                <label for="bathrooms">Bathrooms:</label>
+                <input type="number" id="bathrooms" name="bathrooms" placeholder="Number of Bathrooms" min="0">
+
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div class="splitting">
+            <section class="Buypic" data-text="Buy Now"></section>
+            <section class="Rentpic" data-text="Rent Today"></section>
+        </div>
+        <script>
+            const properties = [
+                { type: 'house', city: 'New York', price: 500000, bedrooms: 3, bathrooms: 2 },
+                { type: 'apartment', city: 'Los Angeles', price: 350000, bedrooms: 2, bathrooms: 1 },
+                { type: 'condo', city: 'Chicago', price: 450000, bedrooms: 3, bathrooms: 2 },
+                { type: 'house', city: 'Houston', price: 300000, bedrooms: 4, bathrooms: 3 },
+                { type: 'apartment', city: 'Miami', price: 280000, bedrooms: 2, bathrooms: 2 },
+                // Add more properties as needed
+            ];
+    
+            document.getElementById('search-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+    
+                const propertyType = document.getElementById('property-type').value;
+                const city = document.getElementById('city').value.toLowerCase();
+                const minPrice = parseFloat(document.getElementById('min-price').value) || 0;
+                const maxPrice = parseFloat(document.getElementById('max-price').value) || Infinity;
+                const bedrooms = parseInt(document.getElementById('bedrooms').value) || 0;
+                const bathrooms = parseInt(document.getElementById('bathrooms').value) || 0;
+    
+                const results = properties.filter(property => {
+                    return (
+                        (property.type === propertyType || propertyType === '') &&
+                        (property.city.toLowerCase().includes(city)) &&
+                        (property.price >= minPrice && property.price <= maxPrice) &&
+                        (property.bedrooms >= bedrooms) &&
+                        (property.bathrooms >= bathrooms)
+                    );
+                });
+    
+                displayResults(results);
+            });
+    
+            function displayResults(results) {
+                const resultsContainer = document.getElementById('results-container');
+                resultsContainer.innerHTML = '';
+    
+                if (results.length === 0) {
+                    resultsContainer.innerHTML = '<p>No properties found.</p>';
+                    return;
+                }
+    
+                results.forEach(property => {
+                    const propertyDiv = document.createElement('div');
+                    propertyDiv.className = 'property';
+                    propertyDiv.innerHTML = `
+                        <strong>Type:</strong> ${property.type}<br>
+                        <strong>City:</strong> ${property.city}<br>
+                        <strong>Price:</strong> $${property.price.toLocaleString()}<br>
+                        <strong>Bedrooms:</strong> ${property.bedrooms}<br>
+                        <strong>Bathrooms:</strong> ${property.bathrooms}<br>
+                    `;
+                    resultsContainer.appendChild(propertyDiv);
+                });
+            }
+        </script>
+    </main>
+</body>
+</html>
